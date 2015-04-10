@@ -5,8 +5,8 @@ Final project for the 'Getting and Cleaning Data' course as part of the Coursera
 # NOTES
 
 ## Feature selection
-It was specified in the assignment addendum on the forums that this was open to interpretation. In this case, I took mean features and std features to exclude meanFreq and angle features and to just include the features that end in mean() and std() (also so excluding the more granular -X, -Y, and -Z mean/sd components)
-I feel that excluding the separate X, Y, and Z components is appropriate, as they are (in the real world case of a cell phone accelerometer) not really independent as a subject will rarely travel on just one axis, and the accelerometer is not consistently oriented/mounted per subject.
+It was specified in the assignment addendum on the forums that this was open to interpretation. In this case, I took mean features and std features to exclude meanFreq and angle features.
+I feel that including the separate X, Y, and Z components is most complete, however excluding them could also be appropriate, as they are (in the real world case of a cell phone accelerometer) not really independent as a subject will rarely travel on just one axis, and the accelerometer is not consistently oriented/mounted per subject.
 
 
 
