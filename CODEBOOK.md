@@ -24,7 +24,7 @@ Some additional notes (if avaialble, otherwise you can leave this section out).
 Description on how to create the tidy data file (1. download the data, ...)/
  
 ###Cleaning of the data
-Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
+Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail](README.md)
  
 ##Description of the variables in the tiny_data.txt file
 General description of the file including:
