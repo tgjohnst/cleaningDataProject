@@ -23,9 +23,15 @@ activitylabels$label <- sub("_","",activitylabels$label)
 # Make a data frame to translate feature numbers into feature names
 featurelabels <- read.table('features.txt', sep="\t", stringsAsFactors = F)
 featurelabels <- separate(featurelabels, V1, c("num","label"), " ")
+featurelabelsMeanStd <- featurelabels[grep(".mean()|.std()", featurelabels$label),]
 
-# Load in test dataset and properly combine
+# Load in test dataset files
+# Subvert automatic detection of " " as a separator since we will do the splitting later
+testx <- read.table("test/X_test.txt", sep="\t", stringsAsFactors=F)$V1
+testy <-  read.table("test/y_test.txt")$V1
+testsubject <- read.table("test/subject_test.txt")$V1
 
+# Properly combine test dataset files
 
 
 # Load in training dataset and properly combine
@@ -33,3 +39,6 @@ featurelabels <- separate(featurelabels, V1, c("num","label"), " ")
 
 
 # Merge test and training dataset
+
+
+
