@@ -9,9 +9,8 @@
 setwd("~/Dropbox/Coursera/3_Getting_and_cleaning_data/Projects/UCI HAR Dataset/")
 ##THINGS TO REMOVE BEFORE FINAL PUB
 
-## Libraries to load - requires plyr
+## Libraries to load - requires tidyr
 require(tidyr)
-## /Libraries to load
 
 ##########
 
@@ -41,10 +40,6 @@ activitylabels$label <- sub("_","",activitylabels$label)
 featurelabels <- read.table('features.txt', sep="\t", stringsAsFactors = F)
 featurelabels <- separate(featurelabels, V1, c("num","label"), " ")
 featurelabels$num <- as.numeric(featurelabels$num)
-# Separates out just the features we care about - See note in README!
-# The (commented out) version will not include separate mean()-x, mean()-y, and mean()-z vars
-# featurelabelsmeanstd <- featurelabels[grep(".mean\\(\\)$|.std\\(\\)$", featurelabels$label),]
-selectedfeaturelabels <- featurelabels[grep('.mean\\(\\)|.std\\(\\)', featurelabels$label),]  
   
 # Relabel and factorize tasks
 bothy <- activitylabels$label[match(bothy, activitylabels$num,)]
@@ -57,23 +52,37 @@ bothsubject <- as.factor(bothsubject)
 bothset <- factor(c(rep("test", length(testsubject)), rep("training", length(trainsubject))), levels=c("test","training"))
 
 # Extracts only the measurements on the mean and standard deviation for each measurement. 
+# See note in README!
+# The (commented out) version will not include separate mean()-x, mean()-y, and mean()-z vars
+# featurelabelsmeanstd <- featurelabels[grep(".mean\\(\\)$|.std\\(\\)$", featurelabels$label),]
+selectedfeaturelabels <- featurelabels[grep('.mean\\(\\)|.std\\(\\)', featurelabels$label),]  
 bothx <- bothx[,selectedfeaturelabels$num]
+
+# Appropriately labels the data set with descriptive variable names.
+# Column names are all in lower case, with underscores (_) separating words
+# This is in accordance with Hadley Wickham's style guide: http://stat405.had.co.nz/r-style.html
 names(bothx) <- selectedfeaturelabels$label
-# Appropriately labels the data set with descriptive variable names. 
 names(bothx) <- tolower(names(bothx))
 names(bothx) <- sub('\\(\\)', '', names(bothx))
-names(bothx) <- sub("acc", "acceleration", names(bothx))
-names(bothx) <- sub("mag", "magnitude", names(bothx))
-names(bothx) <- sub("^t", "time", names(bothx))
-names(bothx) <- sub("^f", "freq", names(bothx))
-## TODO here finish naming properly
-## TODO here
+names(bothx) <- sub("^t", "time_", names(bothx))
+names(bothx) <- sub("^f", "frequency_", names(bothx))
+names(bothx) <- sub("acc", "accelerometer_", names(bothx))
+names(bothx) <- sub("gyro", "gyroscope_", names(bothx))
+names(bothx) <- sub("mag", "magnitude_", names(bothx))
+names(bothx) <- sub("jerk", "jerk_", names(bothx))
+names(bothx) <- sub("body", "body_", names(bothx))
+names(bothx) <- sub("gravity", "gravity_", names(bothx))
+names(bothx) <- sub("-std", "std", names(bothx))
+names(bothx) <- sub("-mean", "mean", names(bothx))
+names(bothx) <- sub("-", "_", names(bothx))
 
+## TODO here finish naming properly
 
 # Properly combine all dataset files into a single data frame
-allcombined <- cbind("subject"=bothsubject, "subjectclass"=bothset, "task"=bothy, bothx)
+allcombined <- cbind("subject"=bothsubject, "subject_class"=bothset, "task"=bothy, bothx)
 
-
+# From the data set in step 4, creates a second, independent tidy data set with the average
+#  of each variable for each activity and each subject.
 
 
 
