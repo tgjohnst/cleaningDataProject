@@ -79,10 +79,17 @@ names(bothx) <- sub("-", "_", names(bothx))
 ## TODO here finish naming properly
 
 # Properly combine all dataset files into a single data frame
-allcombined <- cbind("subject"=bothsubject, "subject_class"=bothset, "task"=bothy, bothx)
+allcombined <- cbind("subject"=bothsubject, "task"=bothy, bothx)
 
 # From the data set in step 4, creates a second, independent tidy data set with the average
 #  of each variable for each activity and each subject.
+tidyset <- aggregate(allcombined[,3:ncol(allcombined)],
+                   by=list(allcombined$subject,allcombined$task),
+                   FUN = mean)
+# Fix factor labels from aggregation
+names(tidyset)[1:2] <- c("subject","task")
+# Append average to all measurement column names to reflect change
+names(tidyset)[3:ncol(tidyset)] <- sapply(names(tidyset)[3:ncol(tidyset)], function(x) paste0("average_",x))
 
 
 
