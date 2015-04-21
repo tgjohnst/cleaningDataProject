@@ -38,27 +38,98 @@ The script performs five main operations:
 More information and justification of design choices is available in [The README](README.md)
  
 ##Description of the variables in the tidy_data.txt file
-The tidy_data file is a tab-separated text file that is 180Rx68C. The first two columns denote the subject and activity, making up 180 combinations (30 subjects * 6 activities). The other 66 variables are the arithmetic means of a number of summary statistics of activities, as follows:
-General description of the file including:
- - Dimensions of the dataset
- - Summary of the data
- - Variables present in the dataset
+The tidy data file is a tab-separated text file that is 180Rx68C. The first two columns denote the subject and activity, making up 180 combinations (30 subjects * 6 activities). The other 66 variables are the arithmetic means of a number of summary statistics of activities. Information used in the variable descriptions comes from the feature_info file included with the original dataset. 
+
  
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
- 
-###Variable 1 (repeat this section for all variables in the dataset)
-Short description of what the variable describes.
- 
-Some information on the variable including:
- - Class of the variable
- - Unique values/levels of the variable
- - Unit of measurement (if no unit of measurement list this as well)
- - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
- 
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
+
+
+    File
+    Edit
+    Table
+    Column
+    Row
+    Help
+    Show Example
+
+Put tabs between columns
+Compact mode
+Result (click "Generate" to refresh)
+Copy to clipboard
+
+| Variable name                           | Type               | Description | Valid values                                                 | Unit of measurement |
+|-----------------------------------------|--------------------|-------------|--------------------------------------------------------------|-------|
+| subject                                 | numeric (factor)   |             | 1 to 30                                                      |       |
+| task                                    | character (factor) |             | walkingwalkingupstairswalkingdownstairssittingstandinglaying |       |
+| timeBodyAccelX.mean.average             | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelY.mean.average             | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelZ.mean.average             | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelX.std.average              | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelY.std.average              | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelZ.std.average              | numeric            |             | -1 to 1                                                      |       |
+| timeGravityAccelX.mean.average          | numeric            |             | -1 to 1                                                      |       |
+| timeGravityAccelY.mean.average          | numeric            |             | -1 to 1                                                      |       |
+| timeGravityAccelZ.mean.average          | numeric            |             | -1 to 1                                                      |       |
+| timeGravityAccelX.std.average           | numeric            |             | -1 to 1                                                      |       |
+| timeGravityAccelY.std.average           | numeric            |             | -1 to 1                                                      |       |
+| timeGravityAccelZ.std.average           | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelJerkX.mean.average         | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelJerkY.mean.average         | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelJerkZ.mean.average         | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelJerkX.std.average          | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelJerkY.std.average          | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelJerkZ.std.average          | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroX.mean.average              | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroY.mean.average              | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroZ.mean.average              | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroX.std.average               | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroY.std.average               | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroZ.std.average               | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroJerkX.mean.average          | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroJerkY.mean.average          | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroJerkZ.mean.average          | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroJerkX.std.average           | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroJerkY.std.average           | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroJerkZ.std.average           | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelMagnitude.mean.average     | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelMagnitude.std.average      | numeric            |             | -1 to 1                                                      |       |
+| timeGravityAccelMagnitude.mean.average  | numeric            |             | -1 to 1                                                      |       |
+| timeGravityAccelMagnitude.std.average   | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelJerkMagnitude.mean.average | numeric            |             | -1 to 1                                                      |       |
+| timeBodyAccelJerkMagnitude.std.average  | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroMagnitude.mean.average      | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroMagnitude.std.average       | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroJerkMagnitude.mean.average  | numeric            |             | -1 to 1                                                      |       |
+| timeBodyGyroJerkMagnitude.std.average   | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelX.mean.average             | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelY.mean.average             | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelZ.mean.average             | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelX.std.average              | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelY.std.average              | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelZ.std.average              | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelJerkX.mean.average         | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelJerkY.mean.average         | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelJerkZ.mean.average         | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelJerkX.std.average          | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelJerkY.std.average          | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelJerkZ.std.average          | numeric            |             | -1 to 1                                                      |       |
+| freqBodyGyroX.mean.average              | numeric            |             | -1 to 1                                                      |       |
+| freqBodyGyroY.mean.average              | numeric            |             | -1 to 1                                                      |       |
+| freqBodyGyroZ.mean.average              | numeric            |             | -1 to 1                                                      |       |
+| freqBodyGyroX.std.average               | numeric            |             | -1 to 1                                                      |       |
+| freqBodyGyroY.std.average               | numeric            |             | -1 to 1                                                      |       |
+| freqBodyGyroZ.std.average               | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelMagnitude.mean.average     | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelMagnitude.std.average      | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelJerkMagnitude.mean.average | numeric            |             | -1 to 1                                                      |       |
+| freqBodyAccelJerkMagnitude.std.average  | numeric            |             | -1 to 1                                                      |       |
+| freqBodyGyroMagnitude.mean.average      | numeric            |             | -1 to 1                                                      |       |
+| freqBodyGyroMagnitude.std.average       | numeric            |             | -1 to 1                                                      |       |
+| freqBodyGyroJerkMagnitude.mean.average  | numeric            |             | -1 to 1                                                      |       |
+| freqBodyGyroJerkMagnitude.std.average   | numeric            |             | -1 to 1                                                      |       |
  
 ##Sources
 All data was collected by the following (and the original information can be found [here](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)):
+
 Jorge L. Reyes-Ortiz(1,2), Davide Anguita(1), Alessandro Ghio(1), Luca Oneto(1) and Xavier Parra(2)
 
 1 - Smartlab - Non-Linear Complex Systems Laboratory. DITEN - Università degli Studi di Genova, Genoa (I-16145), Italy.
