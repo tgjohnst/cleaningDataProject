@@ -40,26 +40,10 @@ More information and justification of design choices is available in [The README
 ##Description of the variables in the tidy_data.txt file
 The tidy data file is a tab-separated text file that is 180Rx68C. The first two columns denote the subject and activity, making up 180 combinations (30 subjects * 6 activities). The other 66 variables are the arithmetic means of a number of summary statistics of activities. Information used in the variable descriptions comes from the feature_info file included with the original dataset. 
 
- 
-
-
-    File
-    Edit
-    Table
-    Column
-    Row
-    Help
-    Show Example
-
-Put tabs between columns
-Compact mode
-Result (click "Generate" to refresh)
-Copy to clipboard
-
 | Variable name                           | Type               | Description | Valid values                                                 | Unit of measurement |
 |-----------------------------------------|--------------------|-------------|--------------------------------------------------------------|-------|
 | subject                                 | numeric (factor)   |             | 1 to 30                                                      |       |
-| task                                    | character (factor) |             | walkingwalkingupstairswalkingdownstairssittingstandinglaying |       |
+| task                                    | character (factor) |             | walking<br>walkingupstairswalkingdownstairssittingstandinglaying |       |
 | timeBodyAccelX.mean.average             | numeric            |             | -1 to 1                                                      |       |
 | timeBodyAccelY.mean.average             | numeric            |             | -1 to 1                                                      |       |
 | timeBodyAccelZ.mean.average             | numeric            |             | -1 to 1                                                      |       |
