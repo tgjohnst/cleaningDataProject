@@ -1,6 +1,8 @@
 # cleaningDataProject
 Final project for the 'Getting and Cleaning Data' course as part of the Coursera Data Science Specialization (getdata-013)
 
+This readme contains a description of how the R script works as well as justifications for design choices. Information about the data can be found in the [codebook](CODEBOOK.md)
+
 # Script overview
 The purpose of this R script is to prepare a tidy, curated dataset from a large repository of human activity tracking data. More information about this dataset is available at the links in the original assignment description (below). 
 
