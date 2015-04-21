@@ -1,12 +1,3 @@
----
-title: "Codebook for the tidy version of the activity dataset"
-author: "Timothy Johnstone"
-date: "April, 2015"
-output:
-  html_document:
-    keep_md: yes
----
- 
 ## Project Description
 Final project for the 'Getting and Cleaning Data' course as part of the Coursera Data Science Specialization (getdata-013). The purpose of the project is to prepare a tidy, curated dataset from a large repository of human activity tracking data. More information about this dataset is available at the links in the original assignment description in the readme. 
  

@@ -1,11 +1,3 @@
----
-title: "Readme for the Coursera data tidying project (run_analysis.R)"
-author: "Timothy Johnstone"
-date: "April, 2015"
-output:
-  html_document:
-    keep_md: yes
----
 # cleaningDataProject
 Final project for the 'Getting and Cleaning Data' course as part of the Coursera Data Science Specialization (getdata-013)
 
