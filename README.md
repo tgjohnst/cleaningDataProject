@@ -1,3 +1,11 @@
+---
+title: "Readme for the Coursera data tidying project (run_analysis.R)"
+author: "Timothy Johnstone"
+date: "April, 2015"
+output:
+  html_document:
+    keep_md: yes
+---
 # cleaningDataProject
 Final project for the 'Getting and Cleaning Data' course as part of the Coursera Data Science Specialization (getdata-013)
 
@@ -6,7 +14,7 @@ The purpose of this R script is to prepare a tidy, curated dataset from a large 
 
 The script is written to run inside of the UCI dataset folder assuming no changes to the original file structure. There is a note at the top of the script with a setwd() command that can be modified by the user per their system. 
 
-*R Packages required*: tidyr
+**R Packages required**: tidyr
 
 The script performs five main operations:
 ##### 1. Merges the training and the test sets to create one data set.

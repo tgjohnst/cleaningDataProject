@@ -8,15 +8,12 @@ output:
 ---
  
 ## Project Description
-Short description of the project
+Final project for the 'Getting and Cleaning Data' course as part of the Coursera Data Science Specialization (getdata-013). The purpose of the project is to prepare a tidy, curated dataset from a large repository of human activity tracking data. More information about this dataset is available at the links in the original assignment description in the readme. 
  
 ##Study design and data processing
  
 ###Collection of the raw data
 Description of how the data was collected.
- 
-###Notes on the original (raw) data 
-Some additional notes (if avaialble, otherwise you can leave this section out).
  
 ##Creating the tidy datafile
  
@@ -24,9 +21,17 @@ Some additional notes (if avaialble, otherwise you can leave this section out).
 Description on how to create the tidy data file (1. download the data, ...)/
  
 ###Cleaning of the data
-Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail](README.md)
+The script performs five main operations:
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names. 
+5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+More information and justification of design choices is available in [The README](README.md)
  
-##Description of the variables in the tiny_data.txt file
+##Description of the variables in the tidy_data.txt file
+The tidy_data file is a tab-separated text file that is 180Rx68C. The first two columns denote the subject and activity, making up 180 combinations (30 subjects * 6 activities). The other 66 variables are the arithmetic means of a number of summary statistics of activities, as follows:
 General description of the file including:
  - Dimensions of the dataset
  - Summary of the data
@@ -45,11 +50,5 @@ Some information on the variable including:
  
 (you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
  
-####Notes on variable 1:
-If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
- 
 ##Sources
 Sources you used if any, otherwise leave out.
- 
-##Annex
-If you used any code in the codebook that had the echo=FALSE attribute post this here (make sure you set the results parameter to 'hide' as you do not want the results to show again)

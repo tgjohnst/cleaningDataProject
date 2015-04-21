@@ -107,6 +107,6 @@ names(tidyset)[1:2] <- c("subject","task")
 names(tidyset)[3:ncol(tidyset)] <- sapply(names(tidyset)[3:ncol(tidyset)], function(x) paste0(x, ".average"))
 
 # Write out the tidy dataset to a file
-write.table(tidyset, file="tidy_dataset.txt", sep="\t", row.names=F)
+write.table(tidyset, file="tidy_data.txt", sep="\t", row.names=F)
 
 ## For more information, PLEASE see the attached README.md and CODEBOOK.md
