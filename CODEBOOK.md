@@ -4,7 +4,7 @@ Final project for the 'Getting and Cleaning Data' course as part of the Coursera
 ##Study design and data processing
  
 ###Collection of the raw data
-*The following description is modified but almost verbatim from the original source (see source section at the end of this document) and all credit goes to the original authors.*
+*The following description is modified but almost verbatim from the original source (see source section at the end of this document) and all credit goes to the original authors. This source information can be found along with the raw data downloadable from [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)*
 
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (Walking, walking upstairs, walking downstairs, sitting, standing, laying) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, the authors captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz.
 
