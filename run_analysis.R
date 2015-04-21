@@ -17,6 +17,7 @@ require(tidyr)
 testx <- read.table("test/X_test.txt")
 testy <-  read.table("test/y_test.txt")$V1
 testsubject <- read.table("test/subject_test.txt")$V1
+
 # Load in training dataset files
 trainx <- read.table("train/X_train.txt")
 trainy <-  read.table("train/y_train.txt")$V1
