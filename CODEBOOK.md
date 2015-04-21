@@ -51,6 +51,7 @@ The tidy data file is a tab-separated text file that is 180Rx68C. The first two 
 Rather than write out a complete english description for each individual variable, I have here provided a variable construction schema from which one can derive the meaning of every variable. Individual variable details can also be found in the table in the next section. Each variable is composed of the following (elements in parentheses are found only in some variable names):
 
 **Schema and 2 examples:**
+
 |domain|Target|Sensor|(Transforms)|(Axis)|.statistic|.average|
 |-------------|-------------|-------------|-------------|-------------|-------------|-------------|
 |time|Gravity|Accel|Jerk|X|.mean|.average|
