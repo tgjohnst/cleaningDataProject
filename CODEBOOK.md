@@ -48,7 +48,10 @@ More information and justification of design choices is available in [The README
 The tidy data file is a tab-separated text file that is 180Rx68C. The first two columns denote the subject and activity, making up 180 combinations (30 subjects * 6 activities). The other 66 variables are the arithmetic means of various summary statistics (mean and standard deviation) of activity measurements. Some information used in the variable descriptions comes from the feature_info file included with the original dataset. 
 
 ###Variable construction schema
-Rather than write out a complete english description for each individual variable, I have here provided a variable construction schema from which one can derive the meaning of every variable. Individual variable details can also be found in the table in the next section. 
+Rather than write out a complete english description for each individual variable, I have here provided a variable construction schema from which one can derive the meaning of every variable. Individual variable details can also be found in the table in the next section. Each variable is composed of the following (elements in parentheses are found only in some variable names):
+
+|SCHEMA   |domain|Target|Sensor|(Transforms)|(Axis)|.|statistic|.|average|
+|EXAMPLE    |time|Body|Accel|JerkMagnitude|X|.|mean|.|average|
 
 ###Variable description table
 | Variable name                           | Type               | Description                                                                                                                        | Unit type/transforms                              | Valid values                                                                     | Notes |
