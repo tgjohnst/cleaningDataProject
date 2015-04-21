@@ -59,24 +59,36 @@ selectedfeaturelabels <- featurelabels[grep('.mean\\(\\)|.std\\(\\)', featurelab
 bothx <- bothx[,selectedfeaturelabels$num]
 
 # Appropriately labels the data set with descriptive variable names.
-# Column names are all in lower case, with underscores (_) separating words
-# This is in accordance with Hadley Wickham's style guide: http://stat405.had.co.nz/r-style.html
+# Column names are in camel case for readability, with summary operations separated
+#  from the descriptive part of the name with a period (.) 
+#  While this does not strictly adhere to Hadley Wickham's style guide, it is much
+#  more readable/accessible - see README for further justification and discussion.
 names(bothx) <- selectedfeaturelabels$label
 names(bothx) <- tolower(names(bothx))
 names(bothx) <- sub('\\(\\)', '', names(bothx))
-names(bothx) <- sub("^t", "time_", names(bothx))
-names(bothx) <- sub("^f", "frequency_", names(bothx))
-names(bothx) <- sub("acc", "accelerometer_", names(bothx))
-names(bothx) <- sub("gyro", "gyroscope_", names(bothx))
-names(bothx) <- sub("mag", "magnitude_", names(bothx))
-names(bothx) <- sub("jerk", "jerk_", names(bothx))
-names(bothx) <- sub("body", "body_", names(bothx))
-names(bothx) <- sub("gravity", "gravity_", names(bothx))
-names(bothx) <- sub("-std", "std", names(bothx))
-names(bothx) <- sub("-mean", "mean", names(bothx))
-names(bothx) <- sub("-", "_", names(bothx))
-
-## TODO here finish naming properly
+names(bothx) <- sub("^t", "time", names(bothx))
+names(bothx) <- sub("^f", "freq", names(bothx))
+names(bothx) <- sub("acc", "Accel", names(bothx))
+names(bothx) <- sub("gyro", "Gyro", names(bothx))
+names(bothx) <- sub("mag", "Magnitude", names(bothx))
+names(bothx) <- sub("jerk", "Jerk", names(bothx))
+names(bothx) <- sub("body", "Body", names(bothx))
+names(bothx) <- sub("Bodybody", "Body", names(bothx))
+names(bothx) <- sub("gravity", "Gravity", names(bothx))
+names(bothx) <- sub("-x", "X", names(bothx))
+names(bothx) <- sub("-y", "Y", names(bothx))
+names(bothx) <- sub("-z", "Z", names(bothx))
+# Find column names containing mean/std and move that term to the front of the variable name
+means <- grepl('mean', names(bothx))
+stds <- grepl('std', names(bothx))
+for (i in seq_along(names(bothx))) {
+  if (means[i]) {
+    names(bothx)[i] <- paste0(sub('-mean','',names(bothx[i])), ".mean")
+  }
+  else if (stds[i]) {
+    names(bothx)[i] <- paste0(sub('-std','',names(bothx[i])),".std")
+  }
+}
 
 # Properly combine all dataset files into a single data frame
 allcombined <- cbind("subject"=bothsubject, "task"=bothy, bothx)
@@ -89,7 +101,7 @@ tidyset <- aggregate(allcombined[,3:ncol(allcombined)],
 # Fix factor labels from aggregation
 names(tidyset)[1:2] <- c("subject","task")
 # Append average to all measurement column names to reflect change
-names(tidyset)[3:ncol(tidyset)] <- sapply(names(tidyset)[3:ncol(tidyset)], function(x) paste0("average_",x))
+names(tidyset)[3:ncol(tidyset)] <- sapply(names(tidyset)[3:ncol(tidyset)], function(x) paste0(x, ".average"))
 
 
 
