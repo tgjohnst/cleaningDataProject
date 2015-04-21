@@ -4,7 +4,13 @@ Final project for the 'Getting and Cleaning Data' course as part of the Coursera
 ##Study design and data processing
  
 ###Collection of the raw data
-Description of how the data was collected.
+*The following description is modified but almost verbatim from the original source (see source section at the end of this document) and all credit goes to the original authors.*
+
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (Walking, walking upstairs, walking downstairs, sitting, standing, laying) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, the authors captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz.
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
+
+Some further information about transformations applied to the data can be found in the variable construction schema later in this document.
  
 ##Creating the tidy datafile
  
@@ -25,6 +31,7 @@ The tidy data file will be output as tidy_data.txt inside the UCI HAR Dataset fo
  
 ###Cleaning of the data
 The script performs five main operations:
+
 1. Merges the training and the test sets to create one data set.
 
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
@@ -38,7 +45,7 @@ The script performs five main operations:
 More information and justification of design choices is available in [The README](README.md)
  
 ##Description of the variables in the tidy_data.txt file
-The tidy data file is a tab-separated text file that is 180Rx68C. The first two columns denote the subject and activity, making up 180 combinations (30 subjects * 6 activities). The other 66 variables are the arithmetic means of a number of summary statistics of activities. Information used in the variable descriptions comes from the feature_info file included with the original dataset. 
+The tidy data file is a tab-separated text file that is 180Rx68C. The first two columns denote the subject and activity, making up 180 combinations (30 subjects * 6 activities). The other 66 variables are the arithmetic means of various summary statistics (mean and standard deviation) of activity measurements. Some information used in the variable descriptions comes from the feature_info file included with the original dataset. 
 
 ###Variable construction schema
 Rather than write out a complete english description for each individual variable, I have here provided a variable construction schema from which one can derive the meaning of every variable. Individual variable details can also be found in the table in the next section. 
