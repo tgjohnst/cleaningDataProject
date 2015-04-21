@@ -1,5 +1,5 @@
 ---
-title: "Codebook for tidying the activity dataset"
+title: "Codebook for the tidy version of the activity dataset"
 author: "Timothy Johnstone"
 date: "April, 2015"
 output:

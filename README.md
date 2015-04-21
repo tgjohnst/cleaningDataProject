@@ -1,18 +1,24 @@
 # cleaningDataProject
-Final project for the 'Getting and Cleaning Data' course as part of the Coursera Data Science Specialization
+Final project for the 'Getting and Cleaning Data' course as part of the Coursera Data Science Specialization (getdata-013)
 
+# Script overview
+The purpose of this R script is to prepare a tidy, curated dataset from a large repository of human activity tracking data. More information about this dataset is available at the links in the original assignment description (below). 
 
-# NOTES
+The script is written to run inside of the UCI dataset folder assuming no changes to the original file structure. There is a note at the top of the script with a setwd() command that can be modified by the user per their system. 
 
-## Feature selection
-It was specified in the assignment addendum on the forums that this was open to interpretation. In this case, I took mean features and std features to exclude meanFreq and angle features.
-I feel that including the separate X, Y, and Z components is most complete, however excluding them could also be appropriate, as they are (in the real world case of a cell phone accelerometer) not really independent as a subject will rarely travel on just one axis, and the accelerometer is not consistently oriented/mounted per subject.
+*R Packages required*: tidyr
 
-## Variable naming
-Names are all in lower case, with underscores (_) separating words
-This is in accordance with Hadley Wickham's (Author of the definitive 'tidy data' paper) style guide: http://stat405.had.co.nz/r-style.html
+The script performs five main operations:
+#### 1. Merges the training and the test sets to create one data set.
+#### 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+In the original dataset, there are variables including the phrase 'mean' and 'std' such as ...meanFreq()... and angle(...mean...), but which may not represent an actual mean - It was specified in the assignment addendum on the forums that this was open to interpretation. In my case, I took mean features and std features to exclude meanFreq and angle features. 
+There was also the possibility of excluding the axis-specific measurements (e.g. '...mean()-X') and keeping only those averaged across axes, but I felt that that including the separate X, Y, and Z components was most complete. However, excluding them could also be appropriate, as they are (in the real world case of a cell phone accelerometer) not really independent as a subject will rarely travel on just one axis, and the accelerometer is likely not consistently oriented/mounted per subject.
+#### 3. Uses descriptive activity names to name the activities in the data set
 
-
+#### 4. Appropriately labels the data set with descriptive variable names. 
+Column names are in camel case for readability, with summary operations separated from the descriptive part of the name with a period (.). Periods are allowed symbols in R columns, and this demarcation helps to distinguish between parts of the column name that refer to the measurement type versus summary statistics (e.g. mean, stdev) that have been applied to the measurement data. 
+While this does not strictly adhere to Hadley Wickham's style guide, it is much more readable/accessible and improves upon the original variable names. There is more extensive discussion of this point at the following forum link (including a note from the course TA saying this form of variable is appropriate for the assignment) here: https://class.coursera.org/getdata-013/forum/thread?thread_id=154
+#### 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 
 
